@@ -1,0 +1,11 @@
+steps:
+- name: 'node:10.10.0'
+  entrypoint: 'npm'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/${PROJECT_ID}/kubdev-node-server-a:${COMMIT_SHA}'
+  - '.'
+images: ['gcr.io/${PROJECT_ID}/kubdev-node-server-a:${COMMIT_SHA}']
