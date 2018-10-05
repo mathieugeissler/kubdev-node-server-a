@@ -52,7 +52,7 @@ steps:
   args:
   - '-c'
   - |
-    go get github.com/github/hub && cd ${GOPATH}/src/github.com/github/hub
+    go get github.com/github/hub && cd $${GOPATH}/src/github.com/github/hub
     make install
 
     ACTIVE_ACCOUNT=$(gcloud auth list --filter=status:ACTIVE --format="value(account)")
